@@ -23,45 +23,59 @@
             </div>
             
             <section id='div2' class='divs' >
-                <h1>See Doctor</h1>
-                <div class='seeDoc'></div>
+                <h1 class='overLayerGen'>See Doctor</h1>
+                <div class='seeDoc overLayerGen'></div>
             </section>
             <section id='div3' class='divs' >
-                <h1>Order Medicine</h1>
-                <div class='ordaDrugs'></div>
+                <h1 class='overLayerGen'>Order Medicine</h1>
+                <div class='ordaDrugs overLayerGen'></div>
             </section>
             <section id='div4' class='divs' >
-                <h1>Schedule Physiotherapy</h1>
-                <div class='physthrp'></div>
+                <h1 class='overLayerGen'>Schedule Physiotherapy</h1>
+                <div class='physthrp overLayerGen'></div>
             </section>
             <section id='div4' class='divs' >
-                <h1>Lab Diagnosis</h1>
-                <div class='lab'></div>
+                <h1 class='overLayerGen'>Lab Diagnosis</h1>
+                <div class='lab overLayerGen'></div>
             </section>
             
             <div id='div5'>
-                <h2>Our health worker</h2>
-                <div class='info-hid'>
-                    <h3>Mary Akoth</h3>
-                    <h3>Abdi Omar</h3>
-                    <h3>John Juma</h3>
+                <h2>Our Top Doctors</h2>
+                <div class='info-hid hide'>
+                    <h3>Dr. Mary Akoth</h3>
+                    <h3>Dr. Abdi Omar</h3>
+                    <h3>Dr. John Juma</h3>
+                    <h3>Dr. Rogan Redson</h3>
+                    <h3>Dr. Sarah Njeri</h3>
+                    <h3>Dr. Hassan Mwangi</h3>
+                    <h3>Dr. Alex Mikalson</h3>
+                    <h3>Dr. Amina Yassin</h3>
+                    <h3>Dr. Jonjo Shelvey</h3>
                 </div>
                 <h2>Our Partners</h2>
-                <div class='info-hid'>
+                <div class='info-hid hide'>
                     <h3>FitMed</h3>
                     <h3>Walgreen</h3>
+                    <h3>PharmiCare</h3>
+                    <h3>Milka Labs & sons</h3>
+                    <h3>Nakumatt</h3>
                     <h3>Momoth</h3>
                 </div>
-                <h2>Our Doctors</h2>
-                <div class='info-hid'>
-                    <h3>Mary Akoth</h3>
-                    <h3>Abdi Omar</h3>
-                    <h3>John Juma</h3>
+                <h2>Our Location</h2>
+                <div class='info-hid hide'>
+                    <h3>Nairobi, Kenya</h3>
+                    <h3>Mombasa, Kenya</h3>
+                    <h3>Bungoma, Tanzania</h3>
+                    <h3>Minneapolis, Minnesota</h3>
+                    <h3>San Fransisco, California</h3>
+                    <h3>Houston, Texas</h3>
                 </div>
                 
             </div>
+            <div id='job'> 
+                <p>Want to become a health provider? go <a href='https://angel.co/heydoctor/jobs'>here</a></p>
+            </div>
         </div>
-
         <footer>
             <p>About Heydoc</p>
             <p>Discount</p>
@@ -94,7 +108,7 @@
             <label>
                 <input type='radio' name='now' class='ordeRadio'>Schedule Now
             </label>
-            <button class='hide confirm closer'>confirm</button><br>
+            <button class='hide confirm closer show'>confirm</button><br>
             <label>
                 <input type='radio' name='now' class='ordeRadio'>Schedule Later
             </label>
@@ -103,12 +117,12 @@
                 <input placeholder='06'>
                 <input placeholder='2019'>
                 <!--the below button takes up functionality that its should not even after i remove all class(adding hide to acknow and removing from redirectmenu ) correction type='button' solved it, the problem is button in form have type='submit'-->
-                <button type='button' class='later confirm closer'>confirm</button>
+                <button type='button' class='later confirm closer show'>confirm</button>
             </form> 
         </div>
         <div class='hide acknow overLayer'>
             <p>Thanks for using our services. Expect us <span id='waitTime'>in 18 minutes</span></p>
-            <button class='closer'>close</button>
+            <button class='closer show'>close</button>
         </div>
     </body>
     <script>
@@ -136,14 +150,14 @@
         $('.closer').click(function(){
             $('.overLayer').addClass('hide')
         })
-        togglerNext('#div5 > h2','show')
+        togglerNext('#div5 > h2','hide')
         ClickToOpenAnother('#signUpBtn','#signup-menu')
         ClickToOpenAnother('#logInBtn','#login-menu')
-        ClickToOpenAnother('.seeDoc','#seeDoc')
+        ClickToOpenAnother('.overLayerGen','#seeDoc')
         
         $('.confirm').click(function(){
             $('.acknow').removeClass('hide')
-            $(this).hasClass('later')? $('.waitTime').text('hello'): $('.waitTime').text()='now'
+            $(this).hasClass('later')? $('#waitTime').html('the set date'): $('#waitTime').html('in 15 minutes')
         })
         
         
