@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <meta name='viewport' content='width=device-width'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Rajdhani|Dosis|Marck+Script|Indie+Flower|Montserrat|Ubuntu+Mono|Roboto+Slab|Quicksand" rel="stylesheet">
+        <link rel='stylesheet' href='style.css'>
+        <script src='jquery.js'></script>
+        
+    </head>
+    <body>
+        <div id='wrapper'>
+            <div id='div1'>
+            </div>
+            <div id='sect'>
+                <section >
+                    <h1>All Your Hospital Needs Brought To You At Your Home</h1>
+                    <h3>everything a tap away</h3>
+                </section>
+                <div id='signup-in'>
+                    <button id='signUpBtn'>Sign Up</button>
+                    <button id='logInBtn'>Log In</button>
+                </div>
+            </div>
+            
+            <section id='div2' class='divs' >
+                <h1>See Doctor</h1>
+                <div class='seeDoc'></div>
+            </section>
+            <section id='div3' class='divs' >
+                <h1>Order Medicine</h1>
+                <div class='ordaDrugs'></div>
+            </section>
+            <section id='div4' class='divs' >
+                <h1>Schedule Physiotherapy</h1>
+                <div class='physthrp'></div>
+            </section>
+            <section id='div4' class='divs' >
+                <h1>Lab Diagnosis</h1>
+                <div class='lab'></div>
+            </section>
+            
+            <div id='div5'>
+                <h2>Our health worker</h2>
+                <div class='info-hid'>
+                    <h3>Mary Akoth</h3>
+                    <h3>Abdi Omar</h3>
+                    <h3>John Juma</h3>
+                </div>
+                <h2>Our Partners</h2>
+                <div class='info-hid'>
+                    <h3>FitMed</h3>
+                    <h3>Walgreen</h3>
+                    <h3>Momoth</h3>
+                </div>
+                <h2>Our Doctors</h2>
+                <div class='info-hid'>
+                    <h3>Mary Akoth</h3>
+                    <h3>Abdi Omar</h3>
+                    <h3>John Juma</h3>
+                </div>
+                
+            </div>
+        </div>
+
+        <footer>
+            <p>About Heydoc</p>
+            <p>Discount</p>
+            <p>Policy and Privacy</p>
+            &copy 2019 Heydoc, All Rights Reserved          
+        </footer>
+        <div id='topMenu'>
+            <i class="fas fa-user-md"></i>hey<span>doc</span>
+        </div>
+        <div id='login-menu' class='overLayer hide'>
+            <i class="fas fa-times closer"></i>
+            <input placeholder='email or phone number'><br>
+            <input type='password' placeholder='password'>
+            <button>log in</button>
+            <button class='closer'>cancel</button>
+            
+        </div>
+        <div id='signup-menu' class='overLayer hide '>
+            <i class="fas fa-times closer"></i>
+            <input placeholder='email or phone number'><br>
+            <input type='password' placeholder='password'><br>
+            <input placeholder='mpesa account'><br>
+            <input placeholder='address'><br>
+            <button>log in</button>
+            <button class='closer'>cancel</button>
+            
+        </div>
+        <div id='seeDoc' class='overLayer hide'>
+            <i class="fas fa-times closer"></i>
+            <label>
+                <input type='radio' name='now' class='ordeRadio'>Schedule Now
+            </label>
+            <button class='hide confirm closer'>confirm</button><br>
+            <label>
+                <input type='radio' name='now' class='ordeRadio'>Schedule Later
+            </label>
+            <form class='hide'>
+                <input placeholder='23'>
+                <input placeholder='06'>
+                <input placeholder='2019'>
+                <!--the below button takes up functionality that its should not even after i remove all class(adding hide to acknow and removing from redirectmenu ) correction type='button' solved it, the problem is button in form have type='submit'-->
+                <button type='button' class='later confirm closer'>confirm</button>
+            </form> 
+        </div>
+        <div class='hide acknow overLayer'>
+            <p>Thanks for using our services. Expect us <span id='waitTime'>in 18 minutes</span></p>
+            <button class='closer'>close</button>
+        </div>
+    </body>
+    <script>
+        function togglerNext(a,b){
+            $(a).click(function(){
+                $(this).next().toggleClass(b)
+            })   
+        }
+        
+        function ClickToOpenAnother(a,b){
+           $(a).click(function(){
+                $(b).removeClass('hide')
+            }) 
+        }
+        
+        
+        $('.ordeRadio').change(function(){
+            $('.ordeRadio').removeClass('focusd').parent().next().addClass('hide')
+            $(this).addClass('focusd')
+            $('.focusd').parent().next().removeClass('hide')
+        })
+        
+        
+        
+        $('.closer').click(function(){
+            $('.overLayer').addClass('hide')
+        })
+        togglerNext('#div5 > h2','show')
+        ClickToOpenAnother('#signUpBtn','#signup-menu')
+        ClickToOpenAnother('#logInBtn','#login-menu')
+        ClickToOpenAnother('.seeDoc','#seeDoc')
+        
+        $('.confirm').click(function(){
+            $('.acknow').removeClass('hide')
+            $(this).hasClass('later')? $('.waitTime').text('hello'): $('.waitTime').text()='now'
+        })
+        
+        
+        
+    </script>
+</html>
