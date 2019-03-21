@@ -5,6 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Rajdhani|Dosis|Marck+Script|Indie+Flower|Montserrat|Ubuntu+Mono|Roboto+Slab|Quicksand" rel="stylesheet">
         <link rel='stylesheet' href='style.css'>
         <script src='jquery.js'></script>
+        <script src='index.js'></script>
         
     </head>
     <body>
@@ -34,7 +35,7 @@
                 <h1 class='overLayerGen'>Schedule Physiotherapy</h1>
                 <div class='physthrp overLayerGen'></div>
             </section>
-            <section id='div4' class='divs' >
+            <section id='div0' class='divs' >
                 <h1 class='overLayerGen'>Lab Diagnosis</h1>
                 <div class='lab overLayerGen'></div>
             </section>
@@ -73,16 +74,17 @@
                 
             </div>
             <div id='job'> 
-                <p>Want to become a health provider? go <a href='https://angel.co/heydoctor/jobs'>here</a></p>
+                <p>Want to become a health provider? apply <a href='https://angel.co/heydoctor/jobs'>here</a></p>
             </div>
         </div>
         <footer>
             <p>About Heydoc</p>
             <p>Discount</p>
             <p>Policy and Privacy</p>
-            &copy 2019 Heydoc, All Rights Reserved          
+            <p>Kenya | USA</p>
+            <p style='color:gray'>&copy2019 Heydoc, All Rights Reserved </p>          
         </footer>
-        <div id='topMenu'>
+        <div id='topMenu' class='frames'>
             <i class="fas fa-user-md"></i>hey<span>doc</span>
         </div>
         <div id='login-menu' class='overLayer hide'>
@@ -125,42 +127,5 @@
             <button class='closer show'>close</button>
         </div>
     </body>
-    <script>
-        function togglerNext(a,b){
-            $(a).click(function(){
-                $(this).next().toggleClass(b)
-            })   
-        }
-        
-        function ClickToOpenAnother(a,b){
-           $(a).click(function(){
-                $(b).removeClass('hide')
-            }) 
-        }
-        
-        
-        $('.ordeRadio').change(function(){
-            $('.ordeRadio').removeClass('focusd').parent().next().addClass('hide')
-            $(this).addClass('focusd')
-            $('.focusd').parent().next().removeClass('hide')
-        })
-        
-        
-        
-        $('.closer').click(function(){
-            $('.overLayer').addClass('hide')
-        })
-        togglerNext('#div5 > h2','hide')
-        ClickToOpenAnother('#signUpBtn','#signup-menu')
-        ClickToOpenAnother('#logInBtn','#login-menu')
-        ClickToOpenAnother('.overLayerGen','#seeDoc')
-        
-        $('.confirm').click(function(){
-            $('.acknow').removeClass('hide')
-            $(this).hasClass('later')? $('#waitTime').html('the set date'): $('#waitTime').html('in 15 minutes')
-        })
-        
-        
-        
-    </script>
+    
 </html>

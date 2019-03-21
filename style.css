@@ -34,24 +34,24 @@ button {
   font-size: 18px; }
 
 #topMenu {
+  box-sizing: border-box;
   background: #0a0a0a;
   font-size: 25px;
   padding: 5px;
   color: white;
   position: fixed;
   top: 0px;
-  height: 7%;
+  height: 7vh;
   width: 100%;
-  margin-bottom: 30px;
   font-family: Ubuntu Mono; }
   #topMenu i {
     color: #FF8111;
-    margin: 10px; }
+    margin: 5px 10px; }
   #topMenu span {
     color: #ff8111; }
 
 #wrapper {
-  width: 90%;
+  width: 90vw;
   margin: auto;
   position: relative; }
 
@@ -79,12 +79,12 @@ button {
 
 #div1 {
   background: gainsboro;
-  height: 90%;
+  height: 92%;
   width: 100%;
   padding: 1px;
-  margin-top: 65px;
+  margin-top: 8vh;
   background-image: url("images/map1.jpg");
-  background-size: 900px auto;
+  background-size: 100% auto;
   background-position: 0%;
   position: relative; }
   #div1::after {
@@ -97,7 +97,8 @@ button {
 
 #sect {
   position: absolute;
-  top: 7%; }
+  top: 20vh;
+  height: 300px; }
   #sect section {
     margin: 1px 20px;
     color: white; }
@@ -106,7 +107,7 @@ button {
     #sect section h3 {
       color: gainsboro; }
   #sect #signup-in {
-    margin-top: 100px;
+    margin-top: 70px;
     text-align: center; }
     #sect #signup-in button {
       margin: 0px 10px;
@@ -120,9 +121,9 @@ button {
     width: 100px; }
 
 .divs div {
-  height: 50%;
+  height: 120vw;
   margin-bottom: 33px;
-  background-size: cover; }
+  background-size: 100%; }
 
 .divs h1 {
   margin: 33px auto 5px; }
@@ -150,9 +151,15 @@ button {
     background: white;
     margin: 40px 5px; }
 
-#div5 .info-hid {
-  padding-left: 50px;
-  color: gray; }
+#div5 {
+  margin-top: 120px; }
+  #div5 h2 {
+    font-size: 1.3em; }
+  #div5 .info-hid {
+    padding-left: 50px;
+    color: gray; }
+    #div5 .info-hid h3 {
+      font-size: 1em; }
 
 .acknow {
   padding-top: 160px;
@@ -173,3 +180,14 @@ footer {
   background: #3c3c3c;
   height: 40%;
   font-size: 19px; }
+
+.frames {
+  animation: disp 3s ease-out; }
+
+@keyframes disp {
+  0% {
+    margin-bottom: 100px;
+    opacity: 0; }
+  100% {
+    margin-bottom: 5px;
+    opacity: 1; } }

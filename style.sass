@@ -37,25 +37,24 @@ button
     font-size: 18px
 
 #topMenu
+    box-sizing: border-box
     background: rgb(10,10,10)
-    //background: linear-gradient(to bottom right,#0f0c29 30%,#1e5e98)
     font-size: 25px
     padding: 5px
     color: white
     position: fixed
     top: 0px
-    height: 7%
+    height: 7vh
     width: 100%
-    margin-bottom: 30px
     font-family: Ubuntu Mono
     i
         color: #FF8111
-        margin: 10px
+        margin: 5px 10px
     span
         color: #ff8111
 
 #wrapper
-    width: 90%
+    width: 90vw
     margin: auto
     position: relative
         //////////////////
@@ -86,12 +85,12 @@ button
    
 #div1
     background: rgb(220,220,220)
-    height: 90%
+    height: 92%
     width: 100%
     padding: 1px
-    margin-top: 65px
+    margin-top: 8vh
     background-image: url('images/map1.jpg')
-    background-size: 900px auto
+    background-size: 100% auto
     background-position: 0%
     position: relative
     &::after
@@ -103,7 +102,8 @@ button
         top: 0%
 #sect
     position: absolute
-    top: 7%
+    top: 20vh
+    height: 300px
     //background: yellow
     section
         margin: 1px 20px 
@@ -113,7 +113,7 @@ button
         h3
             color: rgb(220,220,220)
     #signup-in
-        margin-top: 100px 
+        margin-top: 70px 
         text-align: center
         button
             margin: 0px 10px
@@ -128,11 +128,12 @@ button
 .divs  
     div
         //background: rgb(220,220,220)
-        height: 50%
+        height: 120vw
         margin-bottom: 33px  
-        background-size: cover
+        background-size: 100%
     h1
         margin: 33px auto 5px
+        
 .seeDoc
     background: url('images/docHome.jpg')
 .physthrp
@@ -156,9 +157,15 @@ button
             
 
 #div5
+    margin-top: 120px
+    h2
+        font-size: 1.3em
     .info-hid
         padding-left: 50px
         color: gray
+        h3
+            font-size: 1em
+        
 .acknow
     padding-top: 160px
     text-align: center
@@ -177,3 +184,15 @@ footer
     background: rgb(60,60,60)
     height: 40%
     font-size: 19px
+ 
+.frames
+    animation: disp 3s ease-out
+    
+
+@keyframes disp
+    0%
+        margin-bottom: 100px
+        opacity: 0
+    100%
+        margin-bottom: 5px
+        opacity: 1
