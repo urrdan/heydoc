@@ -77,7 +77,7 @@ button {
   .overLayer label {
     display: block; }
 
-#div1 {
+#div0 {
   background: gainsboro;
   height: 92%;
   width: 100%;
@@ -87,7 +87,7 @@ button {
   background-size: 100% auto;
   background-position: 0%;
   position: relative; }
-  #div1::after {
+  #div0::after {
     content: '';
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
@@ -182,7 +182,7 @@ footer {
   font-size: 19px; }
 
 .frames {
-  animation: disp 3s ease-out; }
+  animation: disp 1s ease-out; }
 
 @keyframes disp {
   0% {

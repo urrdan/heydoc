@@ -10,7 +10,7 @@
     </head>
     <body>
         <div id='wrapper'>
-            <div id='div1'>
+            <div id='div0'>
             </div>
             <div id='sect'>
                 <section >
@@ -23,19 +23,19 @@
                 </div>
             </div>
             
-            <section id='div2' class='divs' >
+            <section id='div1' class='divs' >
                 <h1 class='overLayerGen'>See Doctor</h1>
                 <div class='seeDoc overLayerGen'></div>
             </section>
-            <section id='div3' class='divs' >
+            <section id='div2' class='divs' >
                 <h1 class='overLayerGen'>Order Medicine</h1>
                 <div class='ordaDrugs overLayerGen'></div>
             </section>
-            <section id='div4' class='divs' >
+            <section id='div3' class='divs' >
                 <h1 class='overLayerGen'>Schedule Physiotherapy</h1>
                 <div class='physthrp overLayerGen'></div>
             </section>
-            <section id='div0' class='divs' >
+            <section id='div4' class='divs' >
                 <h1 class='overLayerGen'>Lab Diagnosis</h1>
                 <div class='lab overLayerGen'></div>
             </section>
@@ -84,7 +84,7 @@
             <p>Kenya | USA</p>
             <p style='color:gray'>&copy2019 Heydoc, All Rights Reserved </p>          
         </footer>
-        <div id='topMenu' class='frames'>
+        <div id='topMenu'>
             <i class="fas fa-user-md"></i>hey<span>doc</span>
         </div>
         <div id='login-menu' class='overLayer hide'>
@@ -127,5 +127,77 @@
             <button class='closer show'>close</button>
         </div>
     </body>
+    
+    <script>
+        function togglerNext(a, b){
+            $(a).click(function(){
+                $(this).next().toggleClass(b)
+            })   
+        }
+
+        function ClickToOpenAnother(a,b){
+           $(a).click(function(){
+                $(b).removeClass('hide')
+            }) 
+        }
+
+
+        $('.ordeRadio').change(function(){
+            $('.ordeRadio').removeClass('focusd').parent().next().addClass('hide')
+            $(this).addClass('focusd')
+            $('.focusd').parent().next().removeClass('hide')
+        })
+
+
+
+        $('.closer').click(function(){
+            $('.overLayer').addClass('hide')
+        })
+        togglerNext('#div5 > h2','hide')
+        ClickToOpenAnother('#signUpBtn','#signup-menu')
+        ClickToOpenAnother('#logInBtn','#login-menu')
+        ClickToOpenAnother('.overLayerGen','#seeDoc')
+
+        $('.confirm').click(function(){
+            $('.acknow').removeClass('hide')
+            $(this).hasClass('later')? $('#waitTime').html('the set date'): $('#waitTime').html('in 15 minutes')
+        })
+
+        function kFrames(a){
+            $(window).scroll(function(){
+                var offs=$(a).position().top-500
+                var scrolled=$(this).scrollTop()
+                if(scrolled >= offs){
+                    //$('#div4>h1').animate({marginBottom: '100px'},600)
+                    $(a).children().addClass('frames')
+                }else{
+                    $(a).children().removeClass('frames')
+                }
+                //console.log(scrolled,offs)    
+            })
+        }
+        kFrames('#div1')
+        kFrames('#div2')
+        kFrames('#div3')
+        
+        kFrames('#div4')
+
+
+
+        /*var ofsetofnav= document.getElementById('div4').offsetTop;
+        //var totalHeightOfHtml=document.documentElement.scrollHeight 
+        window.addEventListener('scroll',function(){
+            var scrolled= window.scrollY;
+            if (scrolled>=ofsetofnav){
+                document.getElementById('div4').style= 'margin:100px';
+            }else{
+                document.getElementById('div4').style='margin:10px';
+            }
+            console.log('scrolled: '+scrolled);
+            //console.log('documentHeight: '+totalHeightOfHtml);
+        })*/
+
+    
+    </script>
     
 </html>
